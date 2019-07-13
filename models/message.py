@@ -59,6 +59,6 @@ class Messages(SQLMixin, db.Model):
             subject=title,
             author=admin_mail,
             to=receiver.email,
-            content='站内信通知：\n {}'.format(content),
+            plain='站内信通知：\n {}'.format(content),
         )
 
