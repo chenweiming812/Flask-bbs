@@ -19,6 +19,7 @@ from models.message import send_mail
 from models.topic import Topic
 from models.user import User
 from routes.helper import new_csrf_token, cache_session, current_user
+from tasks import send_async
 
 from utils import log
 import json
@@ -117,7 +118,7 @@ def reset_send():
     author = admin_mail
     to = u.email
     content = '点击以下链接重置密码 http://152.136.46.27/reset/view?token={}'.format(token)
-    send_mail(subject, author, to, content)
+    send_async.delay(subject, author, to, content)
     progress = '改更密码链接已经发送到您的邮件'
     return render_template('index.html',progress=progress)
 

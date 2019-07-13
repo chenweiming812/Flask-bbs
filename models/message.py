@@ -28,14 +28,14 @@ from tasks import send_async, mailer
 #
 # mailer = configured_mailer()
 
-# def send_mail(subject, author, to, content):
-#     m = mailer.new(
-#         subject=subject,
-#         author=author,
-#         to=to,
-#     )
-#     m.plain = content
-#     mailer.send(m)
+def send_mail(subject, author, to, content):
+    m = mailer.new(
+        subject=subject,
+        author=author,
+        to=to,
+    )
+    m.plain = content
+    mailer.send(m)
 
 
 class Messages(SQLMixin, db.Model):
