@@ -7,6 +7,8 @@ from config import admin_mail
 import secret
 from models.base_model import SQLMixin, db
 from models.user import User
+from tasks import send_async
+
 
 def configured_mailer():
     config = {
@@ -33,7 +35,6 @@ def send_mail(subject, author, to, content):
         to=to,
     )
     m.plain = content
-
     mailer.send(m)
 
 
@@ -52,9 +53,8 @@ class Messages(SQLMixin, db.Model):
             receiver_id=receiver_id
         )
         Messages.new(form)
-
         receiver: User = User.one(id=receiver_id)
-        send_mail(
+        send_async.delay(
             subject=title,
             author=admin_mail,
             to=receiver.email,

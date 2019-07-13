@@ -32,6 +32,8 @@ cp /var/www/cwm/cwm.nginx /etc/nginx/sites-enabled/cwm
 cp /var/www/cwm/cwm.conf /etc/supervisor/conf.d/cwm.conf
 
 cd /var/www/cwm
+
+celery -A tasks worker --loglevel=info
 python3 reset.py
 
 service supervisor restart
