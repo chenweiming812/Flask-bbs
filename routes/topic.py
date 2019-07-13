@@ -49,7 +49,10 @@ def add():
 def delete():
     u = current_user()
     id = int(request.args['id'])
-    Topic.delete(id)
+    if u.id == id:
+        Topic.delete(id)
+    else:
+        pass
     return redirect(url_for('.index'))
 
 @main.route("/new")
