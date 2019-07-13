@@ -30,7 +30,6 @@ def index():
 
 
 @main.route('/<int:id>')
-
 def detail(id):
     m = Topic.get(id)
     return render_template("topic/detail.html", topic=m)

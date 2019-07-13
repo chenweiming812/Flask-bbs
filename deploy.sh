@@ -37,5 +37,4 @@ python3 reset.py
 service supervisor restart
 service nginx restart
 
-curl http://152.136.46.27:4000/
 echo 'deploy success'
