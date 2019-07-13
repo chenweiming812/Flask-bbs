@@ -49,7 +49,8 @@ def add():
 def delete():
     u = current_user()
     id = int(request.args['id'])
-    if u.id == id:
+    t = Topic.one(id=id)
+    if u.id == t.user_id:
         Topic.delete(id)
     else:
         pass
