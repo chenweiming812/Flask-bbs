@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title %}个人主页{% endblock %}
+{% block main %}
+<div class="panel">
+    <div class="header">
+        <ul class="breadcrumb">
+            <li><a href="/topic">主页</a><span class="divider">/</span><a href="/setting">设置</a></li>
+        </ul>
+    </div>
+    <div class="inner userinfo">
+        <div class="user_big_avatar">
+            <img src="{{ user.image }}" alt="图片裂了" title="{{ user.username }}">
+        </div>
+        <a class="dark">{{ user.username }}</a>
+
+        <div class="user_profile">
+            <ul class="unstyled">
+
+
+            </ul>
+        </div>
+        <p class="col_fade">注册时间 {{ user.created_time|format_time }}</p>
+
+    </div>
+</div>
+
+<div class="panel">
+    <div class="header">
+        <span class="col_fade">最近创建的话题</span>
+    </div>
+    {% for t in topic | reverse %}
+        <div class="cell">
+            <a class="user_avatar pull-left" href="/user/{{ t.user().id }}">
+                <img src="{{ t.user().image }}" title="{{ user.username }}">
+            </a>
+
+            <span class="reply_count pull-left">
+    <span class="count_of_replies" title="回复数">
+      {{ t.replies()|count }}
+    </span>
+    <span class="count_seperator">/</span>
+    <span class="count_of_visits" title="点击数">
+      {{ t.views }}
+    </span>
+  </span>
+
+
+            <a class="last_time pull-right" href="/topic/{{ t.id }}">
+                <img class="user_small_avatar">
+                <span class="last_active_time">{{ t.updated_time|format_time }}</span>
+            </a>
+
+
+            <div class="topic_title_wrapper">
+
+                <a class="topic_title" href="/topic/{{ t.id }}" title="{{ user.username }}">
+                    {{ t.content }}
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+<div class="panel">
+    <div class="header">
+        <span class="col_fade">最近参与的话题</span>
+    </div>
+    {% for t in topic_join | reverse %}
+        <div class="cell">
+
+            <a class="user_avatar pull-left" href="/user/{{ t.user().id }}">
+                <img src="{{ t.user().image }}" title="{{ user.username }}">
+            </a>
+
+            <span class="reply_count pull-left">
+    <span class="count_of_replies" title="回复数">
+      {{ t.replies()|count }}
+    </span>
+    <span class="count_seperator">/</span>
+    <span class="count_of_visits" title="点击数">
+      {{ t.views }}
+    </span>
+  </span>
+
+
+            <a class="last_time pull-right" href="/topic/{{ t.id }}">
+                <img class="user_small_avatar">
+                <span class="last_active_time">{{ t.replies()[-1].created_time|format_time }}</span>
+            </a>
+
+
+            <div class="topic_title_wrapper">
+
+
+                <a class="topic_title" title="做作业做作业" href="/topic/{{ t.id }}">
+                    {{ t.content }}
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
