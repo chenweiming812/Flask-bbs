@@ -54,6 +54,7 @@ class Messages(SQLMixin, db.Model):
         )
         Messages.new(form)
         receiver: User = User.one(id=receiver_id)
+
         send_async.delay(
             subject=title,
             author=admin_mail,
