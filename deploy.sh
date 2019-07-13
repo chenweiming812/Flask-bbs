@@ -27,11 +27,11 @@ mysql  -u root -pCwm6213812. -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH m
 rm -f /etc/nginx/sites-enabled/default
 rm -f /etc/nginx/sites-available/default
 
-cp /var/www/web17/web17.nginx /etc/nginx/sites-enabled/web17
+cp /var/www/cwm/cwm.nginx /etc/nginx/sites-enabled/cwm
 
-cp /var/www/web17/web17.conf /etc/supervisor/conf.d/web17.conf
+cp /var/www/cwm/cwm.conf /etc/supervisor/conf.d/cwm.conf
 
-cd /var/www/web17
+cd /var/www/cwm
 python3 reset.py
 
 service supervisor restart
