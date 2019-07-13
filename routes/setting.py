@@ -47,9 +47,9 @@ def password():
     if op == u.password:
         u.password = u.salted_password(np)
         u.save()
-        result = '密码更新成功'
+        result = '密码更新成功!'
     else:
-        result = '密码更新错误'
+        result = '密码更新错误!'
 
     return render_template("setting.html", user=u, result=result)
 
