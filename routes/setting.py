@@ -16,6 +16,7 @@ from routes import current_user
 
 from models.topic import Topic
 from routes.helper import new_csrf_token, csrf_required, login_required
+from utils import log
 
 main = Blueprint('gua_setting', __name__)
 
@@ -23,6 +24,7 @@ main = Blueprint('gua_setting', __name__)
 def index():
     u = current_user()
     board_id = int(request.args.get('board_id', -1))
+    log('board_id',board_id)
     return render_template("setting.html", user=u, bid=board_id)
 
 @login_required

@@ -48,7 +48,6 @@ def add():
 @login_required
 def delete():
     u = current_user()
-
     id = int(request.args['id'])
     Topic.delete(id)
     return redirect(url_for('.index'))
