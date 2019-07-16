@@ -77,7 +77,7 @@ if __name__ == '__main__':
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
     config = dict(
         debug=True,
-        host='127.0.0.1',
+        host='localhost',
         port=3000,
         threaded=True,
     )

@@ -9,6 +9,8 @@ from flask import (
 from routes import *
 
 from models.message import Messages
+from routes.helper import login_required
+
 main = Blueprint('mail', __name__)
 
 
@@ -28,6 +30,7 @@ def add():
 
 
 @main.route('/')
+@login_required
 def index():
     u = current_user()
     send = Messages.all(sender_id=u.id)

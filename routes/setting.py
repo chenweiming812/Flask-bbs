@@ -21,6 +21,7 @@ from utils import log
 main = Blueprint('gua_setting', __name__)
 
 @main.route("/")
+@login_required
 def index():
     u = current_user()
     board_id = int(request.args.get('board_id', -1))
