@@ -38,7 +38,8 @@ def index():
 def register():
     form = request.form
     u = User.register(form)
-    return redirect(url_for('.index'))
+    progress_register = '恭喜您，{}已经注册成功'.format(form['username'])
+    return render_template('index.html',progress_register=progress_register)
 
 @main.route("/login", methods=['POST'])
 def login():
@@ -119,8 +120,8 @@ def reset_send():
     to = u.email
     content = '点击以下链接重置密码 http://152.136.46.27/reset/view?token={}'.format(token)
     send_async.delay(subject, author, to, content)
-    progress = '改更密码链接已经发送到您的邮件'
-    return render_template('index.html',progress=progress)
+    progress_reset = '改更密码链接已经发送到您的邮件'
+    return render_template('index.html',progress_reset=progress_reset)
 
 @main.route('/reset/view')
 def reset_view():
@@ -140,11 +141,11 @@ def reset_update():
         np = request.form['password']
         u.password = u.salted_password(np)
         u.save()
-        progress = '密码更改成功'
-        return render_template('index.html',progress=progress)
+        progress_reset = '密码更改成功'
+        return render_template('index.html',progress_reset=progress_reset)
     else:
-        progress = '密码更改失败'
-        return render_template('index.html',progress=progress)
+        progress_reset = '密码更改失败'
+        return render_template('index.html',progress_reset=progress_reset)
 
 def not_found(e):
     return render_template('404.html')

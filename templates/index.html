@@ -21,6 +21,7 @@
             <input type="text" class="input-xlarge" name="mail">
         </div>
     </div>
+    <label class="control-label">{{ progress_register }}</label>
     <div class="form-actions" method="post" action="{{ url_for('.register') }}">
         <input type="submit" class="span-primary" value="注册">
     </div>
@@ -49,7 +50,7 @@
             <input type="text" class="input-xlarge" name="username">
         </div>
     </div>
-    <label class="control-label">{{ progress }}</label>
+    <label class="control-label">{{ progress_reset }}</label>
     <div class="form-actions">
         <input type="submit" class="span-primary" value="密码找回">
     </div>
