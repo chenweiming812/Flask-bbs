@@ -55,6 +55,13 @@ def login():
         reps.set_cookie('session_id', session_id)
         return reps
 
+@main.route("/quit")
+def quit():
+    session_id = request.cookies['session_id']
+    cache_session.delete(session_id)
+    return redirect(url_for('.index'))
+
+
 def topic_all(id):
     ts = topic.Topic.all(user_id=id)
     return ts

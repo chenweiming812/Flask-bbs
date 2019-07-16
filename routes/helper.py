@@ -41,12 +41,17 @@ def csrf_required(f: object) -> object:
 def current_user():
     if 'session_id' in request.cookies:
         session_id = request.cookies['session_id']
-        id = int(cache_session.get(session_id).decode())
-        u = User.one(id=id)
-        return u
+        if cache_session.get(session_id) is not None:
+            id = int(cache_session.get(session_id).decode())
+            u = User.one(id=id)
+            return u
+        else:
+            u = User.one(id=-1)
+            return u
     else:
         u = User.one(id=-1)
         return u
+
 
 def new_csrf_token():
     u = current_user()
