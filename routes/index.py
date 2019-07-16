@@ -38,7 +38,7 @@ def index():
 def register():
     form = request.form
     u = User.register(form)
-    progress_register = '恭喜您，{}已经注册成功'.format(form['username'])
+    progress_register = '恭喜，{}已经注册成功'.format(form['username'])
     return render_template('index.html',progress_register=progress_register)
 
 @main.route("/login", methods=['POST'])
@@ -47,7 +47,6 @@ def login():
     u = User.validate_login(form)
     print('login user <{}>'.format(u))
     if u is None:
-        # 转到 topic.index 页面
         return redirect(url_for('.index'))
     else:
         session_id = str(uuid.uuid4())
