@@ -29,7 +29,6 @@ class UserModelView(ModelView):
 def count(input):
     return len(input)
 
-
 def format_time(unix_timestamp):
     f = '%Y-%m-%d %H:%M:%S'
     value = time.localtime(unix_timestamp)

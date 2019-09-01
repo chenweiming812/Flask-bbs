@@ -52,6 +52,7 @@ class Messages(SQLMixin, db.Model):
             sender_id=sender_id,
             receiver_id=receiver_id
         )
+
         Messages.new(form)
         receiver: User = User.one(id=receiver_id)
 

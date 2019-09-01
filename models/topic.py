@@ -39,3 +39,13 @@ class Topic(SQLMixin, db.Model):
     def reply_count(self):
         count = len(self.replies())
         return count
+
+    @classmethod
+    def select_replied_topic(cls, user_id):
+        result = (
+            db.session.query(cls)
+                .join(Reply, Topic.id == Reply.topic_id)
+                .filter_by(user_id=user_id)
+                .all()
+        )
+        return result

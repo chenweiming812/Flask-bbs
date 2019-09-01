@@ -73,12 +73,7 @@ def topic_join_all(id):
         ts = json.loads(v)
         return ts
     else:
-        rs = reply.Reply.all(user_id=id)
-        t_join = []
-        for r in rs:
-            t = topic.Topic.one(id=r.topic_id)
-            if t not in t_join:
-                t_join.append(t)
+        t_join = topic.Topic.select_replied_topic(id)
         v = json.dumps([t.json() for t in t_join])
         cache.set(k, v)
         return t_join
