@@ -28,13 +28,14 @@ def generate_fake_date():
     form = dict(
         username='cwm',
         password='123',
-        mail = 'chenweiming812@outlook.com'
+        mail='chenweiming812@outlook.com'
     )
     u = User.register(form)
 
     form = dict(
         username='cwmcwm',
         password='123',
+        mail='chenweiming812@outlook.com'
     )
     u = User.register(form)
 
