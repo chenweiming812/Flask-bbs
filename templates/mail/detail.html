@@ -1,15 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>邮件详情</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}修改信息{% endblock %}
+{% block link %}
+    <link rel="stylesheet" href="/static/css/mail.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+{% endblock %}
+{% block main %}
 
-<p>发件人 id: {{ message.sender_id }}</p>
-<p>收件人 id: {{ message.receiver_id }}</p>
-<p>内容</p>
-<p>{{ message.content }}</p>
+    <div id="content">
+        <div class="panel">
+            <div class="header">
+                <ul class="breadcrumb">
+                    <li><a href="/topic">主页</a><span class="divider">/</span></li>
+                    <li class="active">邮件详情</li>
+                </ul>
+            </div>
+            <br>
+            <div class="panel">
+                <div class="inner">
+                    <p>发件人 id: {{ message.sender_id }}</p>
+                    <p>收件人 id: {{ message.receiver_id }}</p>
+                    <p>内容</p>
+                    <p>{{ message.content }}</p>
+                </div>
 
-</body>
-</html>
+            </div>
+{% endblock %}

@@ -39,6 +39,7 @@ def index():
         'mail/index.html',
         send=send,
         received=received,
+        user = u
     )
     return t
 

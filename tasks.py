@@ -9,7 +9,6 @@ celery = Celery('tasks', backend='redis://localhost', broker='redis://localhost'
 
 def configured_mailer():
     config = {
-        # 'manager.use': 'futures',
         'transport.debug': True,
         'transport.timeout': 1,
         'transport.use': 'smtp',
