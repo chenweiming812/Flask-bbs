@@ -19,17 +19,17 @@ www.dolyvvvv.com
 
 功能演示
 -------
-* 注册/登录<br><br>
-![](https://github.com/chenweiming812/Web-MVC-Socket/raw/master/static/readme/login.gif)
+- 注册/登录<br><br>
+![avatar](https://github.com/chenweiming812/Web-MVC-Socket/raw/master/static/readme/login.gif)
 <br>
-* 通过邮箱找回密码<br><br>
-* 发帖/回帖<br><br>
-![](https://github.com/chenweiming812/Web-MVC-Socket/raw/master/static/readme/fatie.gif)
+- 通过邮箱找回密码<br><br>
+- 发帖/回帖<br><br>
+![avatar](https://github.com/chenweiming812/Web-MVC-Socket/raw/master/static/readme/fatie.gif)
 <br>
-* 个人资料修改<br><br>
-![](https://github.com/chenweiming812/Web-MVC-Socket/raw/master/static/readme/setting.gif)
+- 个人资料修改<br><br>
+![v](https://github.com/chenweiming812/Web-MVC-Socket/raw/master/static/readme/setting.gif)
 <br>
-* 站内信<br><br>
+- 站内信<br><br>
 
 依赖
 ----
