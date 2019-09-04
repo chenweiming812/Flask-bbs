@@ -20,6 +20,9 @@ www.dolyvvvv.com
 功能演示
 -------
 * 注册/登录
+<br><br>
+![](https://github.com/chenweiming812/Web-MVC-Socket/raw/master/static/readme/login.gif)
+<br>
 * 通过邮箱找回密码
 * 发帖/回帖
 * 个人资料修改
