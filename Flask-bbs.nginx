@@ -2,11 +2,11 @@ server {
     listen 80;
 
     location /images {
-        alias /var/www/cwm/images;
+        alias /var/www/Flask-bbs/images;
     }
 
     location /static {
-        alias /var/www/cwm/static;
+        alias /var/www/Flask-bbs/static;
     }
 
     location / {

@@ -27,11 +27,11 @@ mysql  -u root -pCwm6213812. -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH m
 rm -f /etc/nginx/sites-enabled/default
 rm -f /etc/nginx/sites-available/default
 
-cp /var/www/cwm/cwm.nginx /etc/nginx/sites-enabled/cwm
+cp /var/www/Flask-bbs/Flask-bbs.nginx /etc/nginx/sites-enabled/Flask-bbs
 
-cp /var/www/cwm/cwm.conf /etc/supervisor/conf.d/cwm.conf
+cp /var/www/Flask-bbs/Flask-bbs.conf /etc/supervisor/conf.d/Flask-bbs.conf
 
-cd /var/www/cwm
+cd /var/www/Flask-bbs
 
 python3 reset.py
 
