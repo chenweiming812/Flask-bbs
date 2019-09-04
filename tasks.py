@@ -6,7 +6,6 @@ from config import admin_mail
 
 celery = Celery('tasks', backend='redis://localhost', broker='redis://localhost')
 
-
 def configured_mailer():
     config = {
         'transport.debug': True,
@@ -34,5 +33,6 @@ def send_async(self, subject, author, to, plain):
         )
         m.plain = plain
         mailer.send(m)
+        raise ValueError('tetest')
     except Exception as exc:
         raise self.retry(exc=exc, countdown=3, max_retries=5)

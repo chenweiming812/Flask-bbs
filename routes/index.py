@@ -125,6 +125,12 @@ def reset_send():
         to = u.email
         content = '点击以下链接重置密码 http://152.136.46.27/reset/view?token={}'.format(token)
         send_async.delay(subject, author, to, content)
+        # send_mail(
+        #     subject=subject,
+        #     author=author,
+        #     to=to,
+        #     content=content
+        # )
         progress_reset = '改更密码链接已经发送到您的邮件'
     else:
         progress_reset = '请输入正确用户名'
