@@ -13,7 +13,7 @@ from config import admin_mail
 from models import topic, reply
 from models.user import User
 from routes.helper import cache_session, current_user
-from routes.tasks import send_async
+from tasks import send_async
 
 import json
 import redis
