@@ -19,11 +19,21 @@ www.dolyvvvv.com
 
 功能演示
 -------
-* 注册/登录
-* 通过邮箱找回密码
-* 发帖/回帖
-* 个人资料修改
-* 站内信
+- 注册/登录
+
+![](https://github.com/chenweiming812/Flask-bbs/raw/master/static/readme/login.gif)
+
+- 通过邮箱找回密码
+
+- 发帖/回帖
+
+![](https://github.com/chenweiming812/Flask-bbs/raw/master/static/readme/fatie.gif)
+
+- 个人资料修改
+
+![](https://github.com/chenweiming812/Flask-bbs/raw/master/static/readme/setting.gif)
+
+- 站内信<br><br>
 
 依赖
 ----
