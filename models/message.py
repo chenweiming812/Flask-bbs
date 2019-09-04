@@ -1,17 +1,17 @@
 from sqlalchemy import Column, Unicode, UnicodeText, Integer
-from tasks import mailer, send_async
+import tasks
 from config import admin_mail
 from models.base_model import SQLMixin, db
 from models.user import User
 
 def send_mail(subject, author, to, content):
-    m = mailer.new(
+    m = tasks.mailer.new(
         subject=subject,
         author=author,
         to=to,
     )
     m.plain = content
-    mailer.send(m)
+    tasks.mailer.send(m)
 
 
 class Messages(SQLMixin, db.Model):
@@ -32,7 +32,7 @@ class Messages(SQLMixin, db.Model):
         Messages.new(form)
         receiver: User = User.one(id=receiver_id)
 
-        send_async.delay(
+        tasks.send_async.delay(
             subject=title,
             author=admin_mail,
             to=receiver.email,

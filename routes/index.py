@@ -116,7 +116,7 @@ def reset_send():
         author = admin_mail
         to = u.email
         content = '点击以下链接重置密码 http://152.136.46.27/reset/view?token={}'.format(token)
-        send_async.delay(subject, author, to, content)
+        tasks.send_async.delay(subject, author, to, content)
         # send_mail(
         #     subject=subject,
         #     author=author,
