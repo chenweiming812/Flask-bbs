@@ -1,27 +1,20 @@
-import os
-import random
 import uuid
 
 from flask import (
     render_template,
     request,
     redirect,
-    session,
     url_for,
     Blueprint,
     abort,
     send_from_directory)
-from werkzeug.datastructures import FileStorage
 
 from config import admin_mail
 from models import topic, reply
-from models.message import send_mail
-from models.topic import Topic
 from models.user import User
-from routes.helper import new_csrf_token, cache_session, current_user
-from tasks import send_async
+from routes.helper import cache_session, current_user
+from routes.tasks import send_async
 
-from utils import log
 import json
 import redis
 

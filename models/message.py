@@ -1,13 +1,9 @@
-from time import sleep
-
-from marrow.mailer import Mailer
 from sqlalchemy import Column, Unicode, UnicodeText, Integer
 
 from config import admin_mail
-import secret
 from models.base_model import SQLMixin, db
 from models.user import User
-from tasks import mailer, send_async
+from routes.tasks import mailer, send_async
 
 
 # def configured_mailer():
