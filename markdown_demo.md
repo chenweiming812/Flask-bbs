@@ -24,7 +24,7 @@
 | 表格 | 表格 |
 
 
-图片： ![图片](https://vip.kybmig.cc/uploads/avatar/2017090517-74X25272-286f-4aba-8f62-005188ffd4bd.jpg)
+图片： ![图片](https://github.com/chenweiming812/Flask-bbs/raw/master/static/pic/iron.jpg)
 
 
 
