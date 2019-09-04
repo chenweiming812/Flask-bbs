@@ -7,7 +7,7 @@ from config import admin_mail
 import secret
 from models.base_model import SQLMixin, db
 from models.user import User
-from tasks import send_async, mailer
+from tasks import mailer, send_async
 
 
 # def configured_mailer():
