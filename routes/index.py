@@ -8,15 +8,14 @@ from flask import (
     Blueprint,
     abort,
     send_from_directory)
-
+import json
+import redis
 from tasks import send_async
 from config import admin_mail
 from models import topic, reply
 from models.user import User
 from routes.helper import cache_session, current_user
 
-import json
-import redis
 
 cache = redis.StrictRedis()
 main = Blueprint('index', __name__)
