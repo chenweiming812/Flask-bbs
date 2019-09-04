@@ -1,9 +1,8 @@
 from sqlalchemy import Column, Unicode, UnicodeText, Integer
-
+from tasks import mailer, send_async
 from config import admin_mail
 from models.base_model import SQLMixin, db
 from models.user import User
-from tasks import mailer, send_async
 
 def send_mail(subject, author, to, content):
     m = mailer.new(
