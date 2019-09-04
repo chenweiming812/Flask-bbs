@@ -10,7 +10,7 @@ from flask import (
     send_from_directory)
 import json
 import redis
-from tasks import mailer,send_async
+import tasks
 from config import admin_mail
 from models import topic, reply
 from models.user import User
