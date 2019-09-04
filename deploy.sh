@@ -31,8 +31,6 @@ cp /var/www/cwm/cwm.nginx /etc/nginx/sites-enabled/cwm
 
 cp /var/www/cwm/cwm.conf /etc/supervisor/conf.d/cwm.conf
 
-cp /var/www/cwm/celery.conf /etc/supervisor/conf.d/celery.conf
-
 cd /var/www/cwm
 
 python3 reset.py
