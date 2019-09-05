@@ -14,21 +14,21 @@
             </div>
             <form class="form-horizontal" method="post" action="{{ url_for('.add') }}">
                 <div class="control-group">
+                    <label class="control-label">标题</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" name="title">
+                    </div>
+                </div>
+                <div class="control-group">
                     <label class="control-label">内容</label>
                     <div class="controls">
-                        <input type="text" class="input-xlarge" name="content" placeholder="内容">
+                        <input type="text" class="input-xlarge" name="content">
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label">密码</label>
+                    <label class="control-label">收件人ID</label>
                     <div class="controls">
-                        <input type="text" class="input-xlarge" name="title" placeholder="标题">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">邮箱</label>
-                    <div class="controls">
-                        <input type="text" class="input-xlarge" name="receiver_id" placeholder="收件人ID">
+                        <input type="text" class="input-xlarge" name="receiver_id">
                     </div>
                 </div>
                 <label class="control-label">{{ progress_register }}</label>
@@ -51,7 +51,7 @@
             </div>
             <div class="panel">
                 <div class="header">
-                    <span class="col_fade">过往信息</span>
+                    <span class="col_fade">发送邮件</span>
                 </div>
 
                 <div class="inner">
