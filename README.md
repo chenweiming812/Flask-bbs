@@ -25,7 +25,11 @@ www.dolyvvvv.com
 
 - 通过邮箱找回密码
 
+![](https://github.com/chenweiming812/Flask-bbs/raw/master/static/readme/password.gif)
+
 - 站内信
+
+![](https://github.com/chenweiming812/Flask-bbs/raw/master/static/readme/mail.gif)
 
 - 发帖/回帖
 
@@ -35,6 +39,9 @@ www.dolyvvvv.com
 
 ![](https://github.com/chenweiming812/Flask-bbs/raw/master/static/readme/setting.gif)
 
+- @功能
+
+![](https://github.com/chenweiming812/Flask-bbs/raw/master/static/readme/at.gif)
 
 依赖
 ----
