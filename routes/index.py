@@ -29,7 +29,9 @@ def index():
 @main.route("/register", methods=['POST'])
 def register():
     form = request.form
+    print(form)
     u = User.register(form)
+    print(u)
     if u is not None:
         progress_register = '恭喜，{}已经注册成功'.format(form['username'])
     else:

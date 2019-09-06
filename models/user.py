@@ -25,11 +25,13 @@ class User(SQLMixin, db.Model):
     def register(cls, form):
         name = form['username']
         password = form['password']
-        mail = form['mail']
-        if len(name) > 2 and User.one(username=name) is None and mail is not None:
+        email = form['email']
+        print('mail', email)
+        if len(name) > 2 and User.one(username=name) is None and email is not None:
             u = User.new(form)
             u.password = u.salted_password(password)
             u.save()
+            print('model', u)
             return u
         else:
             return None
