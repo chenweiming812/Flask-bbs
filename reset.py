@@ -10,7 +10,6 @@ from models.user import User
 
 
 def reset_database():
-    # 现在 mysql root 默认用 socket 来验证而不是密码
     url = 'mysql+pymysql://root:{}@localhost/?charset=utf8mb4'.format(
         secret.database_password
     )
@@ -28,14 +27,14 @@ def generate_fake_date():
     form = dict(
         username='cwm',
         password='123',
-        mail='chenweiming812@outlook.com'
+        email='chenweiming812@outlook.com'
     )
     u = User.register(form)
 
     form = dict(
         username='cwmcwm',
         password='123',
-        mail='chenweiming812@outlook.com'
+        email='chenweiming812@outlook.com'
     )
     u = User.register(form)
 
@@ -56,7 +55,7 @@ def generate_fake_date():
         t = Topic.add(topic_form, u.id)
 
         reply_form = dict(
-            content='reply test',
+            content='I am Iron Man',
             topic_id=t.id,
         )
         for j in range(5):
